@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "909434564445",
+    "firebase_url": "https://imab-c3368.firebaseio.com",
+    "project_id": "imab-c3368",
+    "storage_bucket": "imab-c3368.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909434564445:android:e30ba31f8913c115",
+        "android_client_info": {
+          "package_name": "imab.loginscreen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909434564445-semu0v3bs4m9hqcaumqoog5gipq812tq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiwhLLJLJMCqC2_poIkIRm8odHU5QSEB8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909434564445:android:248632f4700d4224",
+        "android_client_info": {
+          "package_name": "com.example.imab.imab_group33"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909434564445-ovn12h71muuv3k5jt2ogt8jaeep3guih.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.imab.imab_group33",
+            "certificate_hash": "f656f1dc0efd36c2908f616bfbacc9add59ae018"
+          }
+        },
+        {
+          "client_id": "909434564445-semu0v3bs4m9hqcaumqoog5gipq812tq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiwhLLJLJMCqC2_poIkIRm8odHU5QSEB8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909434564445-semu0v3bs4m9hqcaumqoog5gipq812tq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
