@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Toast.makeText(this,"Please enter email",Toast.LENGTH_LONG).show();
             return;
         }
-        //cambio
+        //passw
         if(TextUtils.isEmpty(password)){
             Toast.makeText(this,"Please enter password",Toast.LENGTH_LONG).show();
             return;
@@ -106,6 +106,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         }
                     }
                 });
+
 
     }
 

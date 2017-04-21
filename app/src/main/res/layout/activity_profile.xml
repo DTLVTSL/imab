@@ -64,7 +64,6 @@ tools:context="com.example.imab.imab_group33.ProfileActivity">
         android:hint="data of Birthday  dd/mm/aa" />
 
 
-
     <Button
         android:id="@+id/buttonSave"
         android:layout_width="116dp"
@@ -73,6 +72,15 @@ tools:context="com.example.imab.imab_group33.ProfileActivity">
         android:layout_marginTop="40dp"
         android:layout_marginLeft="130dp"
         android:text="Save Data" />
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="130dp"
+        android:text="Logout" />
 
 
 </LinearLayout>

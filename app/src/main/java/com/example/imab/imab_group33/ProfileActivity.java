@@ -32,6 +32,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private EditText editTextSurname;
     private EditText DateBirth;
     private Button buttonSave;
+    private Button buttonLogout;
     //defining a database reference
     private DatabaseReference databaseReference;
 
@@ -61,10 +62,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         buttonSave = (Button) findViewById(R.id.buttonSave);
         buttonSave.setOnClickListener(this);
         mStorageRef = FirebaseStorage.getInstance().getReference();
-
+        buttonLogout = (Button) findViewById(R.id.buttonLogout);
         //getting current user
         FirebaseUser user = firebaseAuth.getCurrentUser();
         //initializing views
+        buttonLogout.setOnClickListener(this);
 
     }
 
@@ -102,8 +104,16 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         if(view == buttonSave){
             saveUserInformation();
             finish();
-            startActivity(new Intent(this, LoginActivity.class));
+            startActivity(new Intent(this, ProfileActivity.class));
 
+        }
+        if(view == buttonLogout){
+            //logging out the user
+            firebaseAuth.signOut();
+            //closing activity
+            finish();
+            //starting login activity
+            startActivity(new Intent(this, LoginActivity.class));
         }
 
 

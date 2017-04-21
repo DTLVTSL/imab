@@ -43,11 +43,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
-            android:text="NEXT" />
+            android:text="SIGNUP" />
 
         <TextView
             android:textAlignment="center"
-            android:text="SIGN IN?"
+            android:text="Already Registered? Signin Here"
             android:id="@+id/textViewSignin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
