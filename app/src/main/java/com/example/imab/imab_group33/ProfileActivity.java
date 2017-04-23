@@ -27,7 +27,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private StorageReference mStorageRef;
     //view objects
 
-    private TextView editCodicFisc;
+    private TextView edituserNam;
     private EditText editTextName;
     private EditText editTextSurname;
     private EditText DateBirth;
@@ -55,7 +55,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         //getting the database reference
         databaseReference = FirebaseDatabase.getInstance().getReference();
         //getting the views from xml resource
-        editCodicFisc = (EditText) findViewById(R.id.editCodicFisc);
+        edituserNam = (EditText) findViewById(R.id.edituserNam);
         editTextName = (EditText) findViewById(R.id.editTextName);
         editTextSurname = (EditText) findViewById(R.id.editTextSurname);
         DateBirth = (EditText) findViewById(R.id.editDateBirth);
@@ -74,7 +74,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         //Getting values from database
         String name = editTextName.getText().toString().trim();
         String sur = editTextSurname.getText().toString().trim();
-        String cod = editCodicFisc.getText().toString().trim();
+        String cod = edituserNam.getText().toString().trim();
         String dby = DateBirth.getText().toString().trim();
 
         //creating a userinformation object
@@ -104,7 +104,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         if(view == buttonSave){
             saveUserInformation();
             finish();
-            startActivity(new Intent(this, ProfileActivity.class));
+            startActivity(new Intent(this, navheaderActivity.class));
 
         }
         if(view == buttonLogout){

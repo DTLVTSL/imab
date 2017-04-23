@@ -26,13 +26,13 @@ tools:context="com.example.imab.imab_group33.ProfileActivity">
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/editCodicFisc"
+        android:id="@+id/edituserNam"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="Fiscal code" />
+        android:hint="User Name" />
 
     <EditText
         android:id="@+id/editTextName"
