@@ -20,7 +20,7 @@ import com.google.firebase.storage.StorageReference;
  * Created by daniel on 4/21/2017.
  */
 
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
+public class Profile2Activity extends AppCompatActivity implements View.OnClickListener {
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
