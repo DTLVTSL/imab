@@ -1,10 +1,13 @@
 package com.example.imab.imab_group33;
 
-import android.app.Fragment;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,24 +18,28 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class navheaderActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Menu");
         setContentView(R.layout.activity_navheader);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
+        drawer.setDrawerListener(toggle);
         toggle.syncState();
-
+        firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
@@ -71,37 +78,43 @@ public class navheaderActivity extends AppCompatActivity
     }
 
     private void displaySelectedScreen(int id){
-        Fragment fragment = null;
+        Intent intent = null;
         switch(id){
             case R.id.nav_profile2:
-                fragment = new Profile2Activity();
+                Intent i = new Intent(navheaderActivity.this,Profile2Activity.class);
+                startActivity(i);
                 break;
             case R.id.nav_groups:
-                fragment = new GroupsActivity();
+                Intent j = new Intent(navheaderActivity.this,GroupsActivity.class);
+                startActivity(j);
                 break;
             case R.id.nav_friends:
-                fragment = new FriendsActivity();
+                Intent k = new Intent(navheaderActivity.this,FriendsActivity.class);
+                startActivity(k);
                 break;
 
             case R.id.nav_tools:
-                fragment = new ToolsActivity();
+                Intent l = new Intent(navheaderActivity.this,ToolsActivity.class);
+                startActivity(l);
                 break;
 
             case R.id.nav_share:
-                fragment = new ShareActivity();
+                //fragment = new ShareActivity();
                 break;
 
             case R.id.nav_send:
-                fragment = new SendActivity();
+                //fragment = new SendActivity();
                 break;
 
           }
 
-        //replacing the fragment
-        if (fragment != null) {
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_frame, fragment);
-            ft.commit();
+        //logging out the user
+        firebaseAuth.signOut();
+        //closing activity
+        finish();
+        //starting login activity
+        startActivity(new Intent(this, LoginActivity.class));
+        break;
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
