@@ -30,6 +30,7 @@ public class Groupcreation_activity extends AppCompatActivity implements View.On
 
 
     private EditText editTextName;
+    private EditText editTextPIN;
     private Button buttonSave;
     //defining a database reference
     private DatabaseReference databaseReference;
@@ -55,6 +56,7 @@ public class Groupcreation_activity extends AppCompatActivity implements View.On
         //getting the views from xml resource
 
         editTextName = (EditText) findViewById(R.id.editTextName);
+        editTextPIN = (EditText) findViewById(R.id.editTextPIN);
         buttonSave = (Button) findViewById(R.id.buttonSave);
         buttonSave.setOnClickListener(this);
         mStorageRef = FirebaseStorage.getInstance().getReference();
@@ -68,7 +70,7 @@ public class Groupcreation_activity extends AppCompatActivity implements View.On
     private void saveUserInformation() {
         //Getting values from database
         String name = editTextName.getText().toString().trim();
-
+        String PIN = editTextPIN.getText().toString().trim();
         //creating a userinformation object
         GroupInformation userInformation = new GroupInformation(name);
 

@@ -33,6 +33,8 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".Groupcreation_activity" />
         <activity android:name=".Newfriend_activity" />
+        <activity android:name=".LinkActivity" />
+        <activity android:name=".DeepLinkActivity" />
         <activity
             android:name=".navheaderActivity"
 

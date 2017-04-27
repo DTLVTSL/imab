@@ -8,6 +8,18 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Dialog Activity with no Title -->
+    <style name="ThemeOverlay.MyDialogActivity" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Blue Buttons -->
+    <style name="ThemeOverlay.MyBlueButton" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="colorButtonNormal">@color/cyan_500</item>
+    </style>
+
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -18,3 +30,5 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
+
+

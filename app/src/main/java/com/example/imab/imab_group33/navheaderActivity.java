@@ -95,6 +95,12 @@ public class navheaderActivity extends AppCompatActivity
                 startActivity(k);
                 break;
 
+            case R.id.nav_invite:
+                Intent l = new Intent(navheaderActivity.this,LinkActivity.class);
+                startActivity(l);
+                break;
+
+
             case R.id.nav_share:
                 //fragment = new ShareActivity();
                 break;

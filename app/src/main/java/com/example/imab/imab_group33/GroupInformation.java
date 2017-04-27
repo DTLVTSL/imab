@@ -7,14 +7,16 @@ package com.example.imab.imab_group33;
 public class GroupInformation {
 
     public String name;
+    public String PIN;
 
     public GroupInformation(){
 
     }
 
 
-    public GroupInformation(String name) {
+    public GroupInformation(String name, String PIN) {
         this.name = name;
+        this.PIN = PIN;
 
     }
 }

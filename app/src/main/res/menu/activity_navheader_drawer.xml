@@ -18,6 +18,11 @@
             android:title="Add a new Friend" />
 
         <item
+            android:id="@+id/nav_invite"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Invite a friend" />
+
+        <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_menu_manage"
             android:title="logout" />
