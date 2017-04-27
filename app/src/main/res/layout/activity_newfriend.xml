@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.imab.imab_group33.ProfileActivity">
+    tools:context="com.example.imab.imab_group33.Newfriend_activity">
 
 
     <LinearLayout
@@ -21,48 +21,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Inserisce i tuoi dati"
+            android:text="Add new friend email"
             android:layout_marginTop="20dp"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
+
+
         <EditText
-            android:id="@+id/editCodicFisc"
+            android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:hint="Codice Fiscale" />
-
-        <EditText
-            android:id="@+id/editTextName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:hint="Scrivi nome" />
-
-        <EditText
-            android:id="@+id/editTextSurname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:hint="Scrivi cognome" />
-
-        <EditText
-            android:id="@+id/editDateBirth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="date"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:hint="Data di nascita  gg/mm/aa" />
-
+            android:hint="New friend email" />
 
 
         <Button
@@ -72,7 +44,7 @@
             android:background="@color/colorPrimary"
             android:layout_marginTop="40dp"
             android:layout_marginLeft="130dp"
-            android:text="Registrare" />
+            android:text="Add your new friend" />
 
 
     </LinearLayout>

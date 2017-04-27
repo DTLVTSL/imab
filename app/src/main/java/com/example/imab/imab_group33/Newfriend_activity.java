@@ -1,5 +1,9 @@
 package com.example.imab.imab_group33;
 
+
+/**
+ * Created by daniel on 4/27/2017.
+ */
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -16,23 +21,18 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-/**
- * Created by daniel on 4/21/2017.
- */
 
-public class Profile2Activity extends AppCompatActivity implements View.OnClickListener {
+
+public class Newfriend_activity extends AppCompatActivity implements View.OnClickListener {
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
     private StorageReference mStorageRef;
     //view objects
 
-    private TextView edituserNam;
-    private EditText editTextName;
-    private EditText editTextSurname;
-    private EditText DateBirth;
+
+    private EditText editTextEmail;
     private Button buttonSave;
-    private Button buttonLogout;
     //defining a database reference
     private DatabaseReference databaseReference;
 
@@ -41,7 +41,7 @@ public class Profile2Activity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_newfriend);
         //initializing firebase authentication object
         firebaseAuth = FirebaseAuth.getInstance();
         //if the user is not logged in
@@ -55,30 +55,25 @@ public class Profile2Activity extends AppCompatActivity implements View.OnClickL
         //getting the database reference
         databaseReference = FirebaseDatabase.getInstance().getReference();
         //getting the views from xml resource
-        edituserNam = (EditText) findViewById(R.id.edituserNam);
-        editTextName = (EditText) findViewById(R.id.editTextName);
-        editTextSurname = (EditText) findViewById(R.id.editTextSurname);
-        DateBirth = (EditText) findViewById(R.id.editDateBirth);
+
+        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         buttonSave = (Button) findViewById(R.id.buttonSave);
         buttonSave.setOnClickListener(this);
         mStorageRef = FirebaseStorage.getInstance().getReference();
-        buttonLogout = (Button) findViewById(R.id.buttonLogout);
+
         //getting current user
         FirebaseUser user = firebaseAuth.getCurrentUser();
         //initializing views
-        buttonLogout.setOnClickListener(this);
 
     }
 
     private void saveUserInformation() {
         //Getting values from database
-        String name = editTextName.getText().toString().trim();
-        String sur = editTextSurname.getText().toString().trim();
-        String cod = edituserNam.getText().toString().trim();
-        String dby = DateBirth.getText().toString().trim();
 
+         String email = editTextEmail.getText().toString().trim();
         //creating a userinformation object
-        UserInformation userInformation = new UserInformation(name, sur, cod, dby);
+        NewfriendInformation userInformation = new NewfriendInformation(email);
+
 
         //getting the current logged in user
         FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -91,7 +86,10 @@ public class Profile2Activity extends AppCompatActivity implements View.OnClickL
         * and then for that user under the unique id we are saving data
         * for saving data we are using setvalue method this method takes a normal java object
         * */
-        databaseReference.child(user.getUid()).setValue(userInformation);
+        databaseReference.child(user.getUid()).child("friends").push().setValue(userInformation);
+
+
+
 
         //displaying a success toast
         Toast.makeText(this, "Information Saved...", Toast.LENGTH_LONG).show();
@@ -106,14 +104,6 @@ public class Profile2Activity extends AppCompatActivity implements View.OnClickL
             finish();
             startActivity(new Intent(this, navheaderActivity.class));
 
-        }
-        if(view == buttonLogout){
-            //logging out the user
-            firebaseAuth.signOut();
-            //closing activity
-            finish();
-            //starting login activity
-            startActivity(new Intent(this, LoginActivity.class));
         }
 
 

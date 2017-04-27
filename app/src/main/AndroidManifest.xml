@@ -6,6 +6,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -21,11 +24,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProfileActivity" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".PrincipalActivity" />
+        <activity android:name=".Items_activity" />
+        <activity android:name=".members_activity" />
+        <activity android:name=".new_item_activity" />
+        <activity android:name=".Invite_Activity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".Groupcreation_activity" />
+        <activity android:name=".Newfriend_activity" />
         <activity
             android:name=".navheaderActivity"
-            android:label="@string/title_activity_navheader"
+
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -80,44 +80,47 @@ public class navheaderActivity extends AppCompatActivity
     private void displaySelectedScreen(int id){
         Intent intent = null;
         switch(id){
-            case R.id.nav_profile2:
-                Intent i = new Intent(navheaderActivity.this,Profile2Activity.class);
+            case R.id.nav_profile:
+                Intent i = new Intent(navheaderActivity.this,ProfileActivity.class);
                 startActivity(i);
                 break;
+
             case R.id.nav_groups:
-                Intent j = new Intent(navheaderActivity.this,GroupsActivity.class);
+                Intent j = new Intent(navheaderActivity.this,Groupcreation_activity.class);
                 startActivity(j);
                 break;
-            case R.id.nav_friends:
-                Intent k = new Intent(navheaderActivity.this,FriendsActivity.class);
-                startActivity(k);
-                break;
 
-            case R.id.nav_tools:
-                Intent l = new Intent(navheaderActivity.this,ToolsActivity.class);
-                startActivity(l);
+            case R.id.nav_friends:
+                Intent k = new Intent(navheaderActivity.this,Newfriend_activity.class);
+                startActivity(k);
                 break;
 
             case R.id.nav_share:
                 //fragment = new ShareActivity();
                 break;
-
             case R.id.nav_send:
                 //fragment = new SendActivity();
                 break;
 
-          }
-
-        //logging out the user
-        firebaseAuth.signOut();
-        //closing activity
-        finish();
-        //starting login activity
-        startActivity(new Intent(this, LoginActivity.class));
-        break;
+            case R.id.nav_logout:
+                //logging out the user
+                firebaseAuth.signOut();
+                //closing activity
+                finish();
+                //starting login activity
+                startActivity(new Intent(this, LoginActivity.class));
+                break;
         }
+        //if (fragment != null){
+        //    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        //    ft.replace(R.id.content_frame, fragment);
+        //    ft.commit();
+
+        // }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

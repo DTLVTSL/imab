@@ -1,33 +1,35 @@
 package com.example.imab.imab_group33;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
+/**
+ * Created by daniel on 4/27/2017.
+ */
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.support.v7.app.AppCompatActivity;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.EditText;
+        import android.widget.TextView;
+        import android.widget.Toast;
+
+        import com.google.firebase.auth.FirebaseAuth;
+        import com.google.firebase.auth.FirebaseUser;
+        import com.google.firebase.database.DatabaseReference;
+        import com.google.firebase.database.FirebaseDatabase;
+        import com.google.firebase.storage.FirebaseStorage;
+        import com.google.firebase.storage.StorageReference;
 
 
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
+public class Groupcreation_activity extends AppCompatActivity implements View.OnClickListener {
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
     private StorageReference mStorageRef;
     //view objects
 
-    private TextView editCodicFisc;
+
     private EditText editTextName;
-    private EditText editTextSurname;
-    private EditText DateBirth;
     private Button buttonSave;
     //defining a database reference
     private DatabaseReference databaseReference;
@@ -37,7 +39,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_groupcreation);
         //initializing firebase authentication object
         firebaseAuth = FirebaseAuth.getInstance();
         //if the user is not logged in
@@ -51,10 +53,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         //getting the database reference
         databaseReference = FirebaseDatabase.getInstance().getReference();
         //getting the views from xml resource
-        editCodicFisc = (EditText) findViewById(R.id.editTextName);
+
         editTextName = (EditText) findViewById(R.id.editTextName);
-        editTextSurname = (EditText) findViewById(R.id.editTextSurname);
-        DateBirth = (EditText) findViewById(R.id.editDateBirth);
         buttonSave = (Button) findViewById(R.id.buttonSave);
         buttonSave.setOnClickListener(this);
         mStorageRef = FirebaseStorage.getInstance().getReference();
@@ -68,12 +68,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private void saveUserInformation() {
         //Getting values from database
         String name = editTextName.getText().toString().trim();
-        String sur = editTextSurname.getText().toString().trim();
-        String cod = editCodicFisc.getText().toString().trim();
-        String dby = DateBirth.getText().toString().trim();
 
         //creating a userinformation object
-        UserInformation userInformation = new UserInformation(name, sur, cod, dby);
+        GroupInformation userInformation = new GroupInformation(name);
 
         //getting the current logged in user
         FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -86,7 +83,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         * and then for that user under the unique id we are saving data
         * for saving data we are using setvalue method this method takes a normal java object
         * */
-        databaseReference.child(user.getUid()).child("profile").setValue(userInformation);
+        databaseReference.child("groups").child(name).child(user.getUid()).setValue(userInformation);
 
         //displaying a success toast
         Toast.makeText(this, "Information Saved...", Toast.LENGTH_LONG).show();

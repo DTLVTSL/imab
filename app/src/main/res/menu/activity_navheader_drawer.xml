@@ -3,21 +3,24 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_profile2"
+            android:id="@+id/nav_profile"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Profile" />
-        <item
-            android:id="@+id/nav_friends"
-            android:icon="@drawable/man"
-            android:title="Friends" />
+            android:title="Add your Profile" />
+
         <item
             android:id="@+id/nav_groups"
-            android:icon="@drawable/groups"
-            android:title="Groups" />
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Add a new Group" />
+
         <item
-            android:id="@+id/nav_tools"
+            android:id="@+id/nav_friends"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Add a new Friend" />
+
+        <item
+            android:id="@+id/nav_logout"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="logout" />
     </group>
 
     <item android:title="Communicate">

@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.imab.imab_group33.InviteActivity">
+    tools:context="com.example.imab.imab_group33.Invite_Activity">
 
     <TextView
         android:text="Plese insert the email"
