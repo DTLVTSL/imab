@@ -35,6 +35,7 @@
         <activity android:name=".Newfriend_activity" />
         <activity android:name=".LinkActivity" />
         <activity android:name=".DeepLinkActivity" />
+        <activity android:name=".ViewDatabase" />
         <activity
             android:name=".navheaderActivity"
 

@@ -23,6 +23,11 @@
             android:title="Invite a friend" />
 
         <item
+            android:id="@+id/nav_view"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="view your groups" />
+
+        <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_menu_manage"
             android:title="logout" />

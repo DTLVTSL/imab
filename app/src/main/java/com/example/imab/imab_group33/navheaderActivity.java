@@ -100,6 +100,10 @@ public class navheaderActivity extends AppCompatActivity
                 startActivity(l);
                 break;
 
+            case R.id.nav_view:
+                Intent m = new Intent(navheaderActivity.this,ViewDatabase.class);
+                startActivity(m);
+                break;
 
             case R.id.nav_share:
                 //fragment = new ShareActivity();
