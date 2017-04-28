@@ -21,14 +21,14 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 
 /**
- * Link Activity for sending App Invites and launchings the DeepLinkActivity when an
+ * Main Activity for sending App Invites and launchings the DeepLinkActivity when an
  * App Invite is received.
  */
 public class LinkActivity extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {
 
-    private static final String TAG = LinkActivity.class.getSimpleName();
+    private static final String TAG = MainActivity.class.getSimpleName();
     private static final int REQUEST_INVITE = 0;
 
     private GoogleApiClient mGoogleApiClient;

@@ -72,7 +72,7 @@ public class Groupcreation_activity extends AppCompatActivity implements View.On
         String name = editTextName.getText().toString().trim();
         String PIN = editTextPIN.getText().toString().trim();
         //creating a userinformation object
-        GroupInformation userInformation = new GroupInformation(name);
+        GroupInformation userInformation = new GroupInformation(name,PIN);
 
         //getting the current logged in user
         FirebaseUser user = firebaseAuth.getCurrentUser();
